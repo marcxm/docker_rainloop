@@ -1,0 +1,28 @@
+version: "3.3"
+
+services:
+
+  rainloop:
+    build: .
+    image: "rainloop"
+    hostname: rainloop
+    restart: always
+    container_name: "rainloop"
+    environment:
+      - PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Warsaw
+    command: ["/start.sh"]
+    ports:
+      - "1001:80"
+    networks:
+      mynetwork:
+        aliases:
+          - rainloop
+    volumes:
+      - "./config:/var/www/html"
+networks:
+  xmsnet:
+    external:
+     name: mynetwork
