@@ -23,6 +23,6 @@ services:
     volumes:
       - "./config:/var/www/html"
 networks:
-  xmsnet:
+  mynetwork:
     external:
      name: mynetwork
