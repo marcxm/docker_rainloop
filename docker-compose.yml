@@ -1,0 +1,28 @@
+version: "2.2"
+
+services:
+
+  rainloop:
+#    cpu_count: 1
+#    cpu_percent: 50
+#    cpus: 0.5
+#    cpu_shares: 73
+#    cpu_quota: 50000
+#    cpu_period: 20ms
+#    cpuset: 0,1
+#    mem_limit: 100m
+    build: .
+    image: "marcxms/rainloop:latest"
+    hostname: rainloop
+    restart: always
+    container_name: "rainloop"
+    environment:
+      - PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Warsaw
+    command: ["/run.sh"]
+    ports:
+      - "80:80"
+    volumes:
+      - "./data:/var/www/html/data"
