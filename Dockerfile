@@ -22,4 +22,3 @@ RUN cd /var/www/html && find . -type f -exec chmod 644 {} \;
 RUN rm /var/www/html/index.html
 CMD ["/start.sh"]
 EXPOSE 80
-#VOLUME /var/www/html
