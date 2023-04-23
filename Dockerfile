@@ -2,7 +2,7 @@ FROM debian:stable-slim
 
 MAINTAINER "Marc Smith" <marc_smith@gmx.com>
 
-ENV VERSION=1.16.0
+ENV VERSION=1.17.0
 
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root
 RUN apt-get update
