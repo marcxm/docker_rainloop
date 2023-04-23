@@ -11,9 +11,9 @@ COPY etc/apache2/apache2.conf /etc/apache2/apache2.conf
 COPY etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
-RUN wget https://www.rainloop.net/repository/webmail/rainloop-community-latest.zip -P /var/www/html
-RUN unzip -o /var/www/html/rainloop-community-latest.zip -d /var/www/html
-RUN rm -f /var/www/html/rainloop-community-latest.zip
+RUN wget https://www.rainloop.net/repository/webmail/rainloop-latest.zip -P /var/www/html
+RUN unzip -o /var/www/html/rainloop-latest.zip -d /var/www/html
+RUN rm -f /var/www/html/rainloop-latest.zip
 RUN chown -R www-data:www-data /var/www/
 RUN chown -R www-data:www-data /var/www/html
 RUN chown -R www-data:www-data /var/www/html/*
